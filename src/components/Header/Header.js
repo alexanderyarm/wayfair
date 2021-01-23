@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { UserAccount } from "../UserAccount/UserAccount";
 
 const StyledHeader = styled.div`
   align-items: center;
@@ -35,7 +36,7 @@ export const Header = () => {
         />
         <LogoText>Partner Home</LogoText>
       </Logo>
-      User account
+      <UserAccount />
     </StyledHeader>
   );
 };
