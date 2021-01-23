@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Header } from "../Header/Header";
 import { Content } from "../Content/Content";
 
 const StyledLayout = styled.div`
@@ -32,7 +33,9 @@ const StyledContent = styled.main`
 export const Layout = () => {
   return (
     <StyledLayout>
-      <StyledHeader>header</StyledHeader>
+      <StyledHeader>
+        <Header />
+      </StyledHeader>
 
       <StyledNavigation>Navigation</StyledNavigation>
 
