@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Item = styled.a`
+const Item = styled.li``;
+
+const ItemLink = styled.a`
   align-items: center;
   display: flex;
   font-size: 13px;
@@ -12,8 +14,10 @@ export const Item = styled.a`
 
 export const UserAccountMenuItem = ({ title, url, onClick }) => {
   return (
-    <Item href={url} onClick={onClick} role="menuitem">
-      {title}
+    <Item role="menuitem">
+      <ItemLink href={url || ""} onClick={onClick}>
+        {title}
+      </ItemLink>
     </Item>
   );
 };

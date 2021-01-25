@@ -12,6 +12,11 @@ export const StyledLanguageSwitcher = styled.button`
   color: #3b3b3b;
   padding-right: 12px;
 `;
+export const LanguageSwitcherList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`;
 
 export const LanguageSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +26,7 @@ export const LanguageSwitcher = () => {
   };
 
   return (
-    <div role="menuitem">
+    <>
       <StyledLanguageSwitcher onClick={toggle}>
         English(UK)
         <IconContext.Provider value={{ size: "18px" }}>
@@ -29,7 +34,11 @@ export const LanguageSwitcher = () => {
         </IconContext.Provider>
       </StyledLanguageSwitcher>
 
-      {isOpen && <UserAccountMenuItem title="LanguageList" />}
-    </div>
+      {isOpen && (
+        <LanguageSwitcherList>
+          <UserAccountMenuItem title="LanguageList" />
+        </LanguageSwitcherList>
+      )}
+    </>
   );
 };

@@ -5,12 +5,15 @@ import { UserAccountMenuItem } from "../UserAccountMenuItem/UserAccountMenuItem"
 import { useCallback } from "react";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 
-const StyledUserAccountMenu = styled.div`
+const StyledUserAccountMenu = styled.ul`
   background: #fff;
   box-shadow: 0 1px 4px 0 #aaa;
   border-radius: 3px;
   min-width: 180px;
   max-height: 300px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 `;
 
 const MENU_ITEMS = data.map((item) => ({ ...item, id: uuidv4() }));
@@ -25,7 +28,9 @@ export const UserAccountMenu = () => {
       {MENU_ITEMS.map(({ title, url, id }, index) => (
         <UserAccountMenuItem title={title} url={url} key={id} />
       ))}
-      <LanguageSwitcher />
+      <li role="menuitem">
+        <LanguageSwitcher />
+      </li>
       <UserAccountMenuItem title="Logout" onClick={handleLogoutClick} />
     </StyledUserAccountMenu>
   );
